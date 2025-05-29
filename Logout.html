@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logout Time Calculator</title>
+  <link rel="stylesheet" href="logoutstyles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Logout Time Calculator</h1>
+    
+    
+    <div class="login-time-row">
+        <label for="loginHour">Login Time:</label>
+      
+        <div class="time-radio-combined">
+          <div class="time-input">
+            <input type="text" id="loginHour" maxlength="2" placeholder="HH" oninput="moveNext(this, 'loginMinute')" />
+            <span>:</span>
+            <input type="text" id="loginMinute" maxlength="2" placeholder="MM" />
+          </div>
+      
+          <div class="radio-group">
+            <label><input type="radio" name="ampm" value="AM" checked /> AM</label>
+            <label><input type="radio" name="ampm" value="PM" /> PM</label>
+          </div>
+        </div>
+      </div>
+      
+    
+
+    <label for="breakTime">Break Time (in minutes):</label>
+    <input type="number" id="breakTime" min="0" placeholder="e.g., 30" required />
+
+    <label for="logoutTime">Calculated Logout Time:</label>
+    <input type="text" id="logoutTime" readonly placeholder="Logout time will appear here" />
+    <p id="greeting" class="greeting-text"></p>
+
+
+    <button onclick="calculateLogoutTime()">Submit</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
