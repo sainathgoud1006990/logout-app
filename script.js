@@ -88,7 +88,31 @@ function moveNext(current, nextId) {
     // Display greeting
     const greetEl = document.getElementById("greeting");
     if (greetEl) {
-      greetEl.textContent = "Have a great day!";
+      greetEl.textContent = "Have a great evening!";
     }
+      document.getElementById("logoutContainer").style.display = "block";
+       showThankYouModal();
   }
+function refreshFields() {
+  document.getElementById("loginHour").value = "";
+  document.getElementById("loginMinute").value = "";
+  document.getElementById("breakTime").value = "";
+  document.getElementById("logoutTime").value = "";
   
+  // Optionally clear greeting or any other dynamic text
+  const greeting = document.getElementById("greeting");
+  if (greeting) greeting.textContent = "";
+
+  // Reset AM/PM to default (AM)
+  document.querySelector('input[name="ampm"][value="AM"]').checked = true;
+    document.getElementById("logoutContainer").style.display = "none";
+}
+ function showThankYouModal() {
+      document.getElementById("thankYouModal").style.display = "block";
+      setTimeout(closeModal, 5000); // auto-close after 5 seconds
+    }
+
+    function closeModal() {
+      document.getElementById("thankYouModal").style.display = "none";
+    }
+
