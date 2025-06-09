@@ -8,39 +8,40 @@
 </head>
 <body>
   <div class="container">
-    <h1>Logout Time Calculator</h1>
-    
-    
+      <div id="thankYouModal" class="popup-above-container">
+      <div class="popup-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>🎉 Thank You!</h2>
+        <p>So happy to see, as many of you are using this app! I hope it's helpful to you.</p>
+      </div>
+    </div>
+    <h1>Logout Time Calculator</h1>    
     <div class="login-time-row">
         <label for="loginHour">Login Time:</label>
-      
         <div class="time-radio-combined">
           <div class="time-input">
             <input type="text" id="loginHour" maxlength="2" placeholder="HH" oninput="moveNext(this, 'loginMinute')" />
             <span>:</span>
             <input type="text" id="loginMinute" maxlength="2" placeholder="MM" />
           </div>
-      
           <div class="radio-group">
             <label><input type="radio" name="ampm" value="AM" checked /> AM</label>
             <label><input type="radio" name="ampm" value="PM" /> PM</label>
           </div>
         </div>
       </div>
-      
-    
-
     <label for="breakTime">Break Time (in minutes):</label>
-    <input type="number" id="breakTime" min="0" placeholder="e.g., 30" required />
-
-    <label for="logoutTime">Calculated Logout Time:</label>
-    <input type="text" id="logoutTime" readonly placeholder="Logout time will appear here" />
-    <p id="greeting" class="greeting-text"></p>
-
-
-    <button onclick="calculateLogoutTime()">Submit</button>
+    <input type="number" id="breakTime" class="input-like-button" min="0" placeholder="e.g., 30" required />
+    <div id="logoutContainer" style="display: none;">
+  <label for="logoutTime">Calculated Logout Time:</label>
+  <input type="text" id="logoutTime" readonly placeholder="Logout time will appear here" />
+  <p id="greeting" class="greeting-text"></p>
   </div>
-
+    <div class="button-group">
+        <button onclick="calculateLogoutTime()"style="background-color:#b9d4f1; color: black;">Submit</button>
+        <button onclick="refreshFields()" style="background-color: #c3bef0; color: black;">Refresh</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
